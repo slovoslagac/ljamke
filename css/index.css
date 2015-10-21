@@ -1,0 +1,362 @@
+body {
+	margin: 0;
+	padding: 0;
+	/*background-image: url("../img/woman-perspiration-fitness.jpg");*/
+	background-color: #242328;
+
+}
+
+ul, ol, li{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+p {
+	font-size: 1.1em;
+	margin: 1% 0 1% 0;
+
+	float: left;
+	font-weight: bold;
+	opacity: 1.0;
+
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+	border: 0;
+	background: transparent;
+	width: 50%;
+	float: right;
+	height: 40px;
+	padding: 0;
+	margin: auto 0 auto 10%;
+	padding: 10px 0 0 0;
+	border-bottom: 2px solid white;
+	font-size: 30px;
+	color: white;
+}
+
+
+
+input[type="submit"]{
+	width: 20%;
+	height: 40px;
+	padding: 0;
+	margin: 10% 40% 10% 40%;
+	padding: 3px;
+	border: 1px solid white;
+	font-size: 20px;
+	color: black;
+}
+
+hr {
+	margin-top: 5%;
+	border: 3px solid #C83C00;
+}
+/*
+li {
+	font-size: 20px;
+	margin: 10px 0 10px 0;
+	width: 40%;
+	float: left;
+	font-weight: bold;
+	opacity: 1.0;
+
+}*/
+
+
+
+#kontejner {
+	z-index: 0;
+	
+}
+
+#menu {
+	width: 100%;
+	min-height: 140px;
+	background-color: #141414;
+	/*opacity: 0.7;*/
+	/*background-image: url("../img/perect line logo small.png");*/
+	background-repeat: no-repeat;
+	background-size: 14%;
+	z-index: 5;
+	min-width: 550px;
+}
+
+/*@media only screen and (min-device-width: 400px) {
+	#menu {
+		background-image: url("../img/perect line logo smaller.png");	
+	}
+}*/
+
+#menu img {
+	margin:auto;
+	resize: both;
+	max-width: 100%;
+    height: auto;
+	float: left;
+
+}
+
+#menu div {
+	float: right;
+	margin: 0.2% 1% 0 0 ;
+	color: #FFFFFF;
+}
+
+#menu ul {
+	float: left;
+	list-style: none;
+	display: block;
+}
+
+#menu li {
+	clear: left;
+	margin: 0;
+	list-style: none;
+	float: left;
+
+}
+
+#menu h3 {
+	margin: 0;
+	padding-left: 20px;
+	font-size: 1em;
+	color: #CB0100;
+
+}
+
+#menu p{
+	margin-top: 0 ;
+	font-size: 0.95em;
+	
+}
+
+
+.mail {
+	background-image: url('../img/gmail.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+.phone {
+	background-image: url('../img/phone.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+
+#menuList {
+	width:50%;
+	color:#FFFFFF;
+	font-weight: bold;
+	margin: auto;
+}
+
+
+
+#menulist a {
+	float: left;
+
+}
+
+#menuList span {
+	
+}
+
+#naslov {
+	font-size: 2em;
+	margin-top: 2%;
+}
+
+#content {
+	width: 60%;
+	margin: auto 20% auto 20%;
+	color: white;
+	float: left;
+
+}
+
+#content_save {
+	width: 100%;
+	margin: auto;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+
+}
+
+#content_save p {
+	width: 100%;
+	margin: auto;
+	color: white;
+
+}
+
+
+#content div {
+	/*margin: 10px;*/
+	width: 100%;
+	float:left;
+	min-width: 650px;
+
+}
+
+#name {
+
+}
+
+.pitanje  {
+	float: left;
+	display: block;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.pitanje p {
+	width: 100%;
+	float: left;
+}
+
+.pitanje ol {
+	float: left;
+}
+
+.pitanje li {
+	width: 60%;
+	list-style: lower-alpha;
+	float: left;
+}
+
+.pitanje tr {
+	
+	float: left;
+}
+
+.pitanje  label {
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    vertical-align: middle;;
+    float: left;
+
+}
+
+
+/*jedan tip odgovora*/
+
+.odg {
+	margin: 2px;
+	
+
+} 
+
+.odg  input {
+	margin: 0;
+	padding: 0;
+    display: inline-block;
+    /*margin: 0 auto -40px;*/
+    float: left;
+    /*margin-top: 3px;*/
+
+}
+
+
+
+
+.odg p {
+	vertical-align: bottom;
+	margin: 3px 2% 3px 30px;
+	height: 30px;
+	width: 25%;
+	/*font-size: 18px;*/
+}
+
+.odg input[type="text"] {
+	height: 30px;
+	width: 55%;
+	padding-top: 0;
+	margin-top: 0;
+	border-bottom: 2px solid #C83C00;
+	background-color: #313538;
+}
+
+.odg input[type="radio"] {
+	height: 30px;
+	padding-top: 0;
+	margin-top: 3px;
+	margin-left: 5px;
+
+}
+
+
+/*drugi tip odgovora bez komentara*/
+
+.odg1 {
+	margin: 2px;
+	
+
+} 
+
+.odg1  input {
+	margin: 0;
+	padding: 0;
+    display: inline-block;
+    /*margin: 0 auto -40px;*/
+    float: left;
+    margin-top: 3px;
+
+}
+
+
+
+
+.odg1 p {
+	vertical-align: bottom;
+	margin: 1.2% 30px 1% 30px;
+	min-width: 500px;
+	width: 70%;
+	/*font-size: 24px;*/
+}
+
+
+
+.odg1 input[type="radio"] {
+	height: 30px;
+	padding-top: 0;
+	margin-top: 1%;
+	margin-left: 5px;
+
+}
+
+
+.odg2 p {
+	/*vertical-align: bottom;*/
+	margin: 1% 3% 1% 3%;
+	float: left;
+	width: 20%;
+	height: 100%;
+	/*font-size: 24px;*/
+}
+
+
+
+.odg2 input[type="number"] {
+	height: 100%;
+	width: 10%;
+	padding-top: 0;
+	margin-top: 0;
+	border-bottom: 2px solid #C83C00;
+	background-color: #313538;
+	float: left;
+	margin: 1% 3% 1% 3%;
+}
+
+
+#save {
+	margin: 50px auto 30px auto;
+	position: relative;
+
+}
