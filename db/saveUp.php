@@ -2,12 +2,12 @@
 
 <?php
 
-$servername = "192.168.186.21";
-$username = "ljamke";
-$password = "ljamke123";
+$servername = "h90hr-mysql1";
+$username = "mysql58450";
+$password = "proske21";
 
 try {
-	$conn = new PDO("mysql:host=$servername;dbname=teretana", $username, $password);
+	$conn = new PDO("mysql:host=$servername;dbname=mysql72865", $username, $password);
 	// set the PDO error mode to exception
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	//echo "Connected successfully";
@@ -16,6 +16,24 @@ catch(PDOException $e)
 {
 	echo "Connection failed: " . $e->getMessage();
 }
+
+
+
+
+// $servername = "192.168.186.21";
+// $username = "ljamke";
+// $password = "ljamke123";
+
+// try {
+// 	$conn = new PDO("mysql:host=$servername;dbname=teretana", $username, $password);
+// 	// set the PDO error mode to exception
+// 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// 	//echo "Connected successfully";
+// }
+// catch(PDOException $e)
+// {
+// 	echo "Connection failed: " . $e->getMessage();
+// }
 
 
 
