@@ -60,7 +60,7 @@ for ($i=1; $i <=11; $i++){
 } 
 
 
-$sql = 'select mail 
+$sql = 'select id 
 from user
 where mail = (:email)';
 
@@ -68,43 +68,16 @@ $param = array (
 		'email' => $email
 	);
 
-
-
-// $select = mysqli_query($conn, $sql);
-// $row = mysqli_fetch_assoc($select);
-// $num_rows = mysqli_num_rows($row);
 $Findmail = $conn -> prepare($sql);
 $Findmail -> execute($param);
-$Showmail = $Findmail -> fetchAll ( PDO::FETCH_ASSOC);
+$userid = $Findmail -> fetchAll ( PDO::FETCH_ASSOC);
+
+// print_r($userid);
 
 
-// echo $Showmail;
+// proverava da lli je ta email adresa vec upisana. ukoliko jeste 
 
-// if ($num_rows > 0) {
-//     echo "email already exists.";
-// }
-
-
-$k=0;
-
-print_r($Showmail);
-
-// echo '<br>'.$email;
-
-// foreach ($Showmail as $s ) {
-// 	if ($s==$email){
-// 		$k=1;
-// 	}
-// }
-
-// echo '<br>'.$k;
-
-
-// if (in_array($email, $Showmail, true)) {
-
-// if ($k==0) {
-
-if (count($Showmail) > 0) {
+if (count($userid) > 0) {
 
 ?>
 
@@ -129,17 +102,12 @@ if (count($Showmail) > 0) {
 				</div>
 			</div>
 			<div id="content_save">
-				
+				<h1>Poštovani e-mail adresa koju ste izabrali je zauzeta, molimo Vas da izaberete neku drugu</h1>
 				
 			</div>
 		</div>
 	</body>
 </html>
-
-
-
-
-
 
 
 
@@ -162,6 +130,59 @@ if (count($Showmail) > 0) {
 
 	$prepare = $conn->prepare($query);
 	$prepare->execute($params);
+
+
+
+	$sql1 = 'select id 
+	from user
+	where mail = (:email)';
+
+	$par = array (
+			'email' => $email
+		);
+
+	$Fu = $conn -> prepare($sql1);
+	$Fu -> execute($par);
+	$userid1 = $Fu -> fetchAll ( PDO::FETCH_COLUMN);
+
+
+	// print_r($userid1);
+	$userid=$userid1[0];
+	// $userid=$userid1['id'];
+	// echo "blABLA".$userid1['id'];
+	$query1 = 'insert into user_answers (user_id, value, question_id)
+	values (:user, :value, :question)';
+
+	$query2 = 'insert into user_answer_comments (user_id, comment, question_id)
+	values (:user, :comment, :question)';
+
+
+	for ($k = 1; $k<= 11; $k++) {
+		if(${"odg".$k} != ""){
+
+			$param = array (
+				'user' => $userid,
+				'value' => ${"odg".$k},
+				'question' => $k
+				);
+
+			$prepare = $conn->prepare($query1);
+			$prepare->execute($param);
+		}
+
+		if(${"odg".$k."comment"} != ""){
+
+			$param1 = array (
+				'user' => $userid,
+				'comment' => ${"odg".$k."comment"},
+				'question' => $k
+				);
+
+			$prepare1 = $conn->prepare($query2);
+			$prepare1->execute($param1);
+		}	
+
+}	
 
 $conn = null;
 
@@ -189,7 +210,6 @@ $conn = null;
 				</div>
 			</div>
 			<div id="content_save">
-				
 				<p><?php echo $ime ?></p>
 				<p><?php echo $prezime ?></p>
 				<p><?php echo $adresa ?></p>
